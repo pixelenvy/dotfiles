@@ -2,22 +2,22 @@
 
 Prior to the installation make sure you have committed the alias to .zsh:
 ```
-alias config='/usr/bin/git --git-dir=$HOME/.config/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 
 And that your source repository ignores the folder where you'll clone it, so that you don't create weird recursion problems:
 ```
-echo ".config" >> .gitignore
+echo ".dotfiles" >> .gitignore
 ```
 
 Now clone the dotfiles into a bare repository in a "dot" folder of your $HOME:
 ```
-git clone --bare git@github.com:pixelenvy/dotfiles.git $HOME/.config
+git clone --bare git@github.com:pixelenvy/dotfiles.git $HOME/.dotfiles
 ```
 
 Define the alias in the current shell scope:
 ```
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 ```
 
 Checkout the actual content from the bare repository to your $HOME:
