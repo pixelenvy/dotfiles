@@ -4,14 +4,14 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export TERM="xterm-256color"
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/nickharris/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME="powerlevel9k/powerlevel9k"
+POWERLEVEL9K_MODE='nerd font-complete'
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -67,10 +67,10 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
@@ -102,70 +102,12 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export PATH=$PATH:$HOME/bin
-export EDITOR='sublime'
+export EDITOR='vim'
 
-# Please only use this battery segment if you have material icons in your nerd font (or font)
-# Otherwise, use the font awesome one in "User Segments"
-prompt_zsh_battery_level() {
-  local percentage1=`pmset -g ps  |  sed -n 's/.*[[:blank:]]+*\(.*%\).*/\1/p'`
-  local percentage=`echo "${percentage1//\%}"`
-  local color='%F{red}'
-  local symbol="\uf00d"
-  pmset -g ps | grep "discharging" > /dev/null
-  if [ $? -eq 0 ]; then
-    local charging="false";
-  else
-    local charging="true";
-  fi
-  if [ $percentage -le 20 ]
-  then symbol='\uf579' ; color='%F{red}' ;
-    #10%
-  elif [ $percentage -gt 19 ] && [ $percentage -le 30 ]
-  then symbol="\uf57a" ; color='%F{red}' ;
-    #20%
-  elif [ $percentage -gt 29 ] && [ $percentage -le 40 ]
-  then symbol="\uf57b" ; color='%F{yellow}' ;
-    #35%
-  elif [ $percentage -gt 39 ] && [ $percentage -le 50 ]
-  then symbol="\uf57c" ; color='%F{yellow}' ;
-    #45%
-  elif [ $percentage -gt 49 ] && [ $percentage -le 60 ]
-  then symbol="\uf57d" ; color='%F{blue}' ;
-    #55%
-  elif [ $percentage -gt 59 ] && [ $percentage -le 70 ]
-  then symbol="\uf57e" ; color='%F{blue}' ;
-    #65%
-  elif [ $percentage -gt 69 ] && [ $percentage -le 80 ]
-  then symbol="\uf57f" ; color='%F{blue}' ;
-    #75%
-  elif [ $percentage -gt 79 ] && [ $percentage -le 90 ]
-  then symbol="\uf580" ; color='%F{blue}' ;
-    #85%
-  elif [ $percentage -gt 89 ] && [ $percentage -le 99 ]
-  then symbol="\uf581" ; color='%F{blue}' ;
-    #85%
-  elif [ $percentage -gt 98 ]
-  then symbol="\uf578" ; color='%F{green}' ;
-    #100%
-  fi
-  if [ $charging = "true" ];
-  then color='%F{green}'; if [ $percentage -gt 98 ]; then symbol='\uf584'; fi
-  fi
-  echo -n "%{$color%}$symbol" ;
-}
+# Manage dotfiles
+alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-zsh_internet_signal(){
-  local color
-  local symbol="\uf7ba"
-  if ifconfig en0 | grep inactive &> /dev/null; then
-  color="%F{red}"
-  else
-  color="%F{blue}"
-  fi
-  echo -n "%{$color%}$symbol "
-}
-
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=false
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
@@ -175,33 +117,41 @@ POWERLEVEL9K_RVM_FOREGROUND="249"
 POWERLEVEL9K_RVM_VISUAL_IDENTIFIER_COLOR="red"
 POWERLEVEL9K_TIME_BACKGROUND="black"
 POWERLEVEL9K_TIME_FOREGROUND="249"
-POWERLEVEL9K_TIME_FORMAT="\UF43A %D{%I:%M  \UF133  %m.%d.%y}"
+POWERLEVEL9K_TIME_FORMAT="%D{%I:%M %m.%d.%y}"
 POWERLEVEL9K_RVM_BACKGROUND="black"
 POWERLEVEL9K_RVM_FOREGROUND="249"
 POWERLEVEL9K_RVM_VISUAL_IDENTIFIER_COLOR="red"
 POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='black'
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='blue'
+POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}"
+HIST_STAMPS="dd/mm/yy"
+DISABLE_UPDATE_PROMPT=true
+
+# NODE_VERSION
+POWERLEVEL9K_NODE_ICON='\uf898'
+POWERLEVEL9K_NODE_VERSION_BACKGROUND='black'
+POWERLEVEL9K_NODE_VERSION_FOREGROUND='green'
+
+# VCS
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\ufbd9'
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND='green'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='yellow'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='white'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='black'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='black'
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='blue'
-POWERLEVEL9K_FOLDER_ICON=''
-POWERLEVEL9K_STATUS_OK_IN_NON_VERBOSE=true
-POWERLEVEL9K_STATUS_VERBOSE=false
-POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
 POWERLEVEL9K_VCS_UNTRACKED_ICON='\u25CF'
 POWERLEVEL9K_VCS_UNSTAGED_ICON='\u00b1'
 POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\u2193'
 POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
 POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
-POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{blue}\u256D\u2500%f"
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{blue}\u2570\uf460%f "
-POWERLEVEL9K_CUSTOM_BATTERY_STATUS="prompt_zsh_battery_level"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context os_icon custom_internet_signal custom_battery_status_joined ssh root_indicator dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time  status  time)
-HIST_STAMPS="dd/mm/yyyy"
-DISABLE_UPDATE_PROMPT=true
-alias config='/usr/bin/git --git-dir=/Users/nickharris/.config/ --work-tree=/Users/nickharris'
+
+#icons
+
+# Prompt Elements
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable node_version newline vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
