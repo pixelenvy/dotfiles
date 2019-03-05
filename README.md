@@ -10,7 +10,7 @@ And that your source repository ignores the folder where you'll clone it, so tha
 echo ".config" >> .gitignore
 ```
 
-Now clone your dotfiles into a bare repository in a "dot" folder of your $HOME:
+Now clone the dotfiles into a bare repository in a "dot" folder of your $HOME:
 ```
 git clone --bare git@github.com:pixelenvy/dotfiles.git $HOME/.config
 ```
