@@ -12,7 +12,7 @@ echo ".config" >> .gitignore
 
 Now clone your dotfiles into a bare repository in a "dot" folder of your $HOME:
 ```
-git clone --bare <git-repo-url> $HOME/.config
+git clone --bare git@github.com:pixelenvy/dotfiles.git $HOME/.config
 ```
 
 Define the alias in the current shell scope:
