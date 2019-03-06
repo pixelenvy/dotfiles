@@ -71,3 +71,11 @@ map <C-n> :NERDTreeToggle<CR>
 " Ale Linting
 " -----------------------------------------------------------------------
 let g:airline#extensions#ale#enabled = 1
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint']
+\}
+let g:ale_fix_on_save = 1
+let g:ale_sign_error = 'ﮊ'
+let g:ale_sign_warning = ''
+highlight clear ALEErrorSign
+highlight clear ALEWarningSign
