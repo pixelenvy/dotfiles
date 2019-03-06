@@ -32,6 +32,9 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'digitaltoad/vim-pug'
 Plug 'isRuslan/vim-es6'
 
+" Dev Icons (always last)
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 " ## General Settings
@@ -64,3 +67,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Toggle NERDTree with ctrl-n
 map <C-n> :NERDTreeToggle<CR>
+
+" Ale Linting
+" -----------------------------------------------------------------------
+let g:airline#extensions#ale#enabled = 1
