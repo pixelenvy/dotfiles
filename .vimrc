@@ -63,6 +63,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeNodeDelimiter = "\u00a0"
+let g:NERDTreeIgnore = ['^node_modules$', '^dist$']
 
 " Open NERDtree automatically if vim started without a file
 autocmd StdinReadPre * let s:std_in=1
@@ -73,7 +74,13 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Ale Linting
 " -----------------------------------------------------------------------
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 1
 let g:airline#extensions#ale#enabled = 1
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint']
 \}
