@@ -24,6 +24,8 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'ternjs/tern_for_vim'
+Plug 'jszakmeister/vim-togglecursor'
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -31,6 +33,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 " Syntax Highlighting
 Plug 'digitaltoad/vim-pug'
 Plug 'isRuslan/vim-es6'
+Plug 'mxw/vim-jsx'
 
 " Dev Icons (always last)
 Plug 'ryanoasis/vim-devicons'
@@ -44,8 +47,8 @@ set expandtab
 set number relativenumber
 set numberwidth=4
 set shiftwidth=2
+set nowrap
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey
-
 
 " ## WildMenu
 " -----------------------------------------------------------------------
