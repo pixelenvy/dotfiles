@@ -24,7 +24,6 @@ Plug 'tpope/vim-surround'
 Plug 'w0rp/ale'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ternjs/tern_for_vim'
 Plug 'jszakmeister/vim-togglecursor'
 
 " Theme
