@@ -107,9 +107,20 @@ export EDITOR='vim'
 # Manage dotfiles
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+# Powerlevel 9K
+prompt_zsh_showStatus () {
+  state=`osascript -e 'tell application "Spotify" to player state as string'`;
+  if [ $state = "playing" ]; then
+    artist=`osascript -e 'tell application "Spotify" to artist of current track as string'`;
+    track=`osascript -e 'tell application "Spotify" to name of current track as string'`;
+
+    echo -n "\uf7ca $artist - $track";
+  fi
+}
+
 POWERLEVEL9K_PROMPT_ON_NEWLINE=false
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_beginning"
 POWERLEVEL9K_RVM_BACKGROUND="black"
@@ -153,5 +164,5 @@ POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
 #icons
 
 # Prompt Elements
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable node_version newline vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable node_version newline vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time zsh_showStatus)
