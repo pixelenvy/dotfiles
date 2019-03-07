@@ -25,6 +25,7 @@ Plug 'w0rp/ale'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jszakmeister/vim-togglecursor'
+Plug 'qpkorr/vim-bufkill'
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -62,7 +63,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeNodeDelimiter = "\u00a0"
-let g:NERDTreeIgnore = ['^node_modules$', '^dist$']
+let g:NERDTreeIgnore = ['^node_modules$', '^dist$', '.DS_Store']
 
 " Open NERDtree automatically if vim started without a file
 autocmd StdinReadPre * let s:std_in=1
