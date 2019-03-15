@@ -42,11 +42,11 @@ call plug#end()
 
 " ## General Settings
 " -----------------------------------------------------------------------
-set tabstop=2
+set tabstop=4
 set expandtab
 set number relativenumber
 set numberwidth=4
-set shiftwidth=2
+set shiftwidth=4
 set nowrap
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey
 
