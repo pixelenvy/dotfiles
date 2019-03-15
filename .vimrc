@@ -12,6 +12,7 @@ call plug#begin('~/.vim/extensions')
 
 " Git
 Plug 'tpope/vim-sensible'
+Plug 'townk/vim-autoclose'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
