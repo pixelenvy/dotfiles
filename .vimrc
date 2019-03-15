@@ -11,6 +11,7 @@ endif
 call plug#begin('~/.vim/extensions')
 
 " Git
+Plug 'tpope/vim-sensible'
 Plug 'airblade/vim-gitgutter'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
@@ -63,7 +64,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeNodeDelimiter = "\u00a0"
-let g:NERDTreeIgnore = ['^node_modules$', '^dist$', '.DS_Store']
+let g:NERDTreeIgnore = ['^node_modules$', '^dist$', '.DS_Store', '\.swp$', '^public$']
 
 " Open NERDtree automatically if vim started without a file
 autocmd StdinReadPre * let s:std_in=1
