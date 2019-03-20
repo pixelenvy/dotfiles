@@ -28,6 +28,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'qpkorr/vim-bufkill'
+Plug 'scrooloose/nerdcommenter'
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -91,3 +92,10 @@ let g:ale_sign_error = 'ﮊ'
 let g:ale_sign_warning = ''
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
+
+" Rename variable
+" -----------------------------------------------------------------------
+" local
+nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
+" global
+nnoremap gR gD:%s/<C-R>///gc<left><left><left>
