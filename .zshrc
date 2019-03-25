@@ -108,6 +108,29 @@ export EDITOR='vim'
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # Powerlevel 9K
+function zsh_package_json () {
+  local pkgjson=$(pwd)/package.json
+  if [[ -f $pkgjson ]]; then
+    local nodever npmver pkgver
+
+    if [[ $POWERLEVEL9K_CUSTOM_PACKAGE_JSON_NODEVER != 'false' ]]; then
+      nodever=$POWERLEVEL9K_NODE_ICON' '$(node --version)
+    fi
+
+    if [[ $POWERLEVEL9K_CUSTOM_PACKAGE_JSON_NPMVER != 'false' ]]; then
+      npmver=$POWERLEVEL9K_NPM_ICON' '$(npm --version)
+    fi
+
+    if [[ $POWERLEVEL9K_CUSTOM_PACKAGE_JSON_PKGVER != 'false' ]]; then
+      local actualpkgver=$(node -p "require('$pkgjson').version || ''")
+      [[ -z $actualpkgver ]] || pkgver=$POWERLEVEL9K_PACKAGE_ICON' '$actualpkgver
+    fi
+
+    env echo -n $nodever $npmver $pkgver
+  fi
+}
+
+POWERLEVEL9K_CUSTOM_PACKAGE_JSON=zsh_package_json
 POWERLEVEL9K_PROMPT_ON_NEWLINE=false
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=false
@@ -134,8 +157,9 @@ DISABLE_UPDATE_PROMPT=true
 
 # NODE_VERSION
 POWERLEVEL9K_NODE_ICON='\uf898'
-POWERLEVEL9K_NODE_VERSION_BACKGROUND='black'
-POWERLEVEL9K_NODE_VERSION_FOREGROUND='green'
+POWERLEVEL9K_NPM_ICON='\uE71E'
+POWERLEVEL9K_CUSTOM_PACKAGE_JSON_BACKGROUND='black'
+POWERLEVEL9K_CUSTOM_PACKAGE_JSON_FOREGROUND='green'
 
 # VCS
 POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\ufbd9'
@@ -154,5 +178,5 @@ POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
 #icons
 
 # Prompt Elements
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable node_version newline vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable custom_package_json newline vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
