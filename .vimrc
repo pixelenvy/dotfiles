@@ -29,6 +29,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdcommenter'
+Plug 'iagofumo/vim-nerdtree-syntax-highlight'
+Plug 'TaDaa/vimade'
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
