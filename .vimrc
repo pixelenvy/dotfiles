@@ -101,3 +101,10 @@ highlight clear ALEWarningSign
 nnoremap gr gd[{V%::s/<C-R>///gc<left><left><left>
 " global
 nnoremap gR gD:%s/<C-R>///gc<left><left><left>
+
+" Vimade
+" -----------------------------------------------------------------------
+let g:vimade = {
+\   'basebg': '#000000',
+\   'fadelevel': '0.6'
+\}
