@@ -69,13 +69,14 @@ let NERDTreeDirArrows = 1
 let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeNodeDelimiter = "\u00a0"
 let g:NERDTreeIgnore = ['^node_modules$', '^dist$', '.DS_Store', '\.swp$', '^public$']
+let NERDTreeShowHidden=1
 
 " Open NERDtree automatically if vim started without a file
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Toggle NERDTree with ctrl-n
-map <C-n> :NERDTreeToggle<CR>
+nmap <C-n> :NERDTreeToggle<CR>
 
 " Ale Linting
 " -----------------------------------------------------------------------
