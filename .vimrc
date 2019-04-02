@@ -31,6 +31,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdcommenter'
 Plug 'TaDaa/vimade'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
+Plug 'ap/vim-css-color'
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
