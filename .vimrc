@@ -29,8 +29,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'qpkorr/vim-bufkill'
 Plug 'scrooloose/nerdcommenter'
-Plug 'iagofumo/vim-nerdtree-syntax-highlight'
 Plug 'TaDaa/vimade'
+Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -96,6 +96,11 @@ let g:ale_sign_warning = ''
 highlight clear ALEErrorSign
 highlight clear ALEWarningSign
 
+" Autocompletion
+" -----------------------------------------------------------------------
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+ 
 " Rename variable
 " -----------------------------------------------------------------------
 " local
