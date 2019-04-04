@@ -48,6 +48,7 @@ call plug#end()
 
 " ## General Settings
 " -----------------------------------------------------------------------
+set autoread
 set tabstop=2
 set expandtab
 set number relativenumber
@@ -77,7 +78,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Toggle NERDTree with ctrl-n
-nmap <C-n> :NERDTreeToggle<CR>
+nmap <F1> :NERDTreeToggle<CR>
 
 " Ale Linting
 " -----------------------------------------------------------------------
