@@ -32,6 +32,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'TaDaa/vimade'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'ap/vim-css-color'
+Plug 'craigemery/vim-autotag'
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
