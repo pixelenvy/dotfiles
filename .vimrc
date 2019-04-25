@@ -33,6 +33,7 @@ Plug 'TaDaa/vimade'
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'ap/vim-css-color'
 Plug 'craigemery/vim-autotag'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -64,6 +65,10 @@ set wildmenu
 set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
 set wildignore+=*.pdf,*.psd
 set wildignore+=node_modules/*,bower_components/*
+
+" CtrlP
+" -----------------------------------------------------------------------
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " ## NERDTree config
 " -----------------------------------------------------------------------
