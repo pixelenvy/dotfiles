@@ -52,7 +52,7 @@ call plug#end()
 set autoread
 set tabstop=2
 set expandtab
-set number relativenumber
+set number
 set numberwidth=4
 set shiftwidth=2
 set nowrap
@@ -117,3 +117,6 @@ let g:vimade = {
 \   'basebg': '#000000',
 \   'fadelevel': '0.6'
 \}
+
+let g:dracula_italic = 0
+color dracula
