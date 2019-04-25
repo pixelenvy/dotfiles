@@ -11,29 +11,25 @@ endif
 call plug#begin('~/.vim/extensions')
 
 " Git
-Plug 'tpope/vim-sensible'
-Plug 'townk/vim-autoclose'
+Plug 'tpope/vim-sensible' " Sensible Vim Defaults
 Plug 'airblade/vim-gitgutter'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'editorconfig/editorconfig-vim' " Base file handling
+Plug 'itchyny/lightline.vim' " A light and configurable statusline/tabline
 Plug 'mattn/emmet-vim'
 Plug 'scrooloose/nerdtree'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-surround'
-Plug 'w0rp/ale'
+Plug 'tpope/vim-eunuch' " UNIX commands in vim
+Plug 'tpope/vim-surround' " Auto surround in insert mode
+Plug 'w0rp/ale' " Linting
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'jszakmeister/vim-togglecursor'
-Plug 'qpkorr/vim-bufkill'
-Plug 'scrooloose/nerdcommenter'
-Plug 'TaDaa/vimade'
+Plug 'jszakmeister/vim-togglecursor' " Change cursor based on mode
+Plug 'qpkorr/vim-bufkill' " Kill a buffer without killing it's window/pane
+Plug 'scrooloose/nerdcommenter' " Quick Commenting
+Plug 'TaDaa/vimade' " Fade inactive panes
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
-Plug 'ap/vim-css-color'
-Plug 'craigemery/vim-autotag'
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ap/vim-css-color' " Highlight colours in css
+Plug 'craigemery/vim-autotag' " Auto-update tags file on save
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file lookup
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
