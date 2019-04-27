@@ -65,7 +65,7 @@ set wildignore+=node_modules/*,bower_components/*
 
 " CtrlP
 " -----------------------------------------------------------------------
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|coverage\|dist'
 
 " ## NERDTree config
 " -----------------------------------------------------------------------
