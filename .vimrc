@@ -105,6 +105,9 @@ highlight clear ALEWarningSign
 " -----------------------------------------------------------------------
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
  
 " Rename variable
 " -----------------------------------------------------------------------
