@@ -54,6 +54,7 @@ set numberwidth=4
 set shiftwidth=2
 set nowrap
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey
+set cursorline
 
 " ## WildMenu
 " -----------------------------------------------------------------------
