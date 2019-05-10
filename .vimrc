@@ -27,7 +27,6 @@ Plug 'qpkorr/vim-bufkill' " Kill a buffer without killing it's window/pane
 Plug 'scrooloose/nerdcommenter' " Quick Commenting
 Plug 'TaDaa/vimade' " Fade inactive panes
 Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
-Plug 'ap/vim-css-color' " Highlight colours in css
 Plug 'craigemery/vim-autotag' " Auto-update tags file on save
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file lookup
 Plug 'townk/vim-autoclose' " Auto close pairs ( {}, '', etc )
