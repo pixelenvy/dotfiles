@@ -30,6 +30,7 @@ Plug 'ternjs/tern_for_vim', { 'do' : 'npm install' }
 Plug 'craigemery/vim-autotag' " Auto-update tags file on save
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file lookup
 Plug 'townk/vim-autoclose' " Auto close pairs ( {}, '', etc )
+Plug 'tpope/vim-fugitive' " Git Wrapper
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
