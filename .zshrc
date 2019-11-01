@@ -71,6 +71,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 
 # User configuration
 
