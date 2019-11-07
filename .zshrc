@@ -2,6 +2,9 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export TERM="xterm-256color"
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -67,6 +70,7 @@ POWERLEVEL9K_MODE='nerd font-complete'
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  nvm
   zsh-autosuggestions
 )
 
