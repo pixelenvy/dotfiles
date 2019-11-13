@@ -74,7 +74,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeNodeDelimiter = "\u00a0"
-let g:NERDTreeIgnore = ['^node_modules$', '^dist$', '.DS_Store', '\.swp$', '^public$', '.nyc_output']
+let g:NERDTreeIgnore = ['^node_modules$', '^dist$', '.DS_Store', '\.swp$', '^public$', '.nyc_output', '.git']
 let NERDTreeShowHidden=1
 
 " Open NERDtree automatically if vim started without a file
@@ -94,8 +94,11 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint']
+\   'javascript': ['prettier', 'eslint'],
+\   'css': ['prettier']
 \}
+let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 let g:ale_sign_error = 'ﮊ'
 let g:ale_sign_warning = ''
