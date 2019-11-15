@@ -94,7 +94,7 @@ let g:ale_linters = {
 \   'javascript': ['eslint'],
 \}
 let g:ale_fixers = {
-\   'javascript': ['prettier', 'eslint'],
+\   'javascript': ['prettier'],
 \   'css': ['prettier']
 \}
 let g:ale_javascript_prettier_use_local_config = 1
