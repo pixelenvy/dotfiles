@@ -97,6 +97,9 @@ let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'css': ['prettier']
 \}
+let g:ale_pattern_options = {
+\   '\.module\.css$': { 'ale_linters': [], 'ale_fixers': ['prettier'] }
+\}
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
@@ -129,3 +132,7 @@ let g:vimade = {
 
 let g:dracula_italic = 0
 color dracula
+
+" CtrlP
+" -----------------------------------------------------------------------
+let g:ctrlp_switch_buffer = 'et'
