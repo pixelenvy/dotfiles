@@ -6,6 +6,8 @@
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -1602,11 +1604,11 @@ Toren:Restore Window Arrangement</string>
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>440 434 799 448 0 0 1680 1027 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>-1390 2147 620 392 -2160 -421 2160 3817 </string>
+	<string>970 768 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2 9 1676 1008 0 0 1680 1027 </string>
+	<string>3 11 1674 1004 0 0 3840 2137 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-1075 -382 1053 1864 -2160 -421 2160 3817 </string>
+	<string>-715 568 690 829 -1440 540 1440 877 </string>
 	<key>NeverWarnAboutShortLivedSessions_754A2F80-34E3-4974-9A2C-74145EAC8F81</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_754A2F80-34E3-4974-9A2C-74145EAC8F81_selection</key>
@@ -2258,18 +2260,30 @@ Toren:Restore Window Arrangement</string>
 	<array>
 		<string>3.3.6</string>
 		<string>3.3.7</string>
+		<string>3.3.8</string>
 	</array>
+	<key>NoSyncBFPRecents</key>
+	<array>
+		<string>Menlo</string>
+	</array>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{0, 0}, {2560, 1440}}</string>
+		<key>topLeft</key>
+		<string>{977, 1192}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {1680, 1050}}</string>
+		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{234, 803}</string>
+		<string>{553, 1108}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>F6B07DA2-B16B-429F-86C1-3CDAA2311900</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>28</integer>
+	<integer>36</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -3036,7 +3050,7 @@ Toren:Restore Window Arrangement</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-04T14:29:29Z</date>
+	<date>2020-02-07T08:46:13Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -11341,7 +11355,7 @@ Toren:Restore Window Arrangement</string>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.7</string>
+	<string>3.3.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>7</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

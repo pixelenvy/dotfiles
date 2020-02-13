@@ -31,6 +31,7 @@ Plug 'craigemery/vim-autotag' " Auto-update tags file on save
 Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file lookup
 Plug 'townk/vim-autoclose' " Auto close pairs ( {}, '', etc )
 Plug 'tpope/vim-fugitive' " Git Wrapper
+Plug 'skywind3000/asyncrun.vim' " Async Runner
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -57,12 +58,19 @@ set nowrap
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey
 set cursorline
 
+" ## Code Folding
+" -----------------------------------------------------------------------
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
 " ## WildMenu
 " -----------------------------------------------------------------------
 set wildmenu
-set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico
+set wildignore+=*.bmp,*.gif,*.ico,*.jpg,*.png,*.ico,*.lock
 set wildignore+=*.pdf,*.psd
-set wildignore+=node_modules/*,bower_components/*
+set wildignore+=node_modules/*,bower_components/*,.cache/*,.vscode/*,__snapshots__/*,.DS_Store/*,coverage/*
 
 " CtrlP
 " -----------------------------------------------------------------------
@@ -74,7 +82,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeNodeDelimiter = "\u00a0"
-let g:NERDTreeIgnore = ['^node_modules$', '^dist$', '.DS_Store', '\.swp$', '^public$', '.nyc_output', '.git']
+let g:NERDTreeIgnore = ['^node_modules$', '^dist$', '.DS_Store', '\.swp$', '^public$', '.nyc_output', '.git', '.cache', '.idea', '.vscode', '\.lock$', '__snapshots__', '^coverage$']
 let NERDTreeShowHidden=1
 
 " Open NERDtree automatically if vim started without a file
@@ -116,6 +124,15 @@ set completeopt=longest,menuone
 inoremap <expr> <C-n> pumvisible() ? '<C-n>' : '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
  
+" Emmet
+" -----------------------------------------------------------------------
+let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_settings = {
+\  'javascript.jsx' : {
+\      'extends' : 'jsx',
+\  },
+\}
+
 " Rename variable
 " -----------------------------------------------------------------------
 " local
