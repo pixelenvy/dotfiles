@@ -32,6 +32,7 @@ Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file lookup
 Plug 'townk/vim-autoclose' " Auto close pairs ( {}, '', etc )
 Plug 'tpope/vim-fugitive' " Git Wrapper
 Plug 'skywind3000/asyncrun.vim' " Async Runner
+Plug 'majutsushi/tagbar' " Ctags in a handy sidebar
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -76,13 +77,17 @@ set wildignore+=node_modules/*,bower_components/*,.cache/*,.vscode/*,__snapshots
 " -----------------------------------------------------------------------
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|coverage\|dist'
 
+" CTags
+" -----------------------------------------------------------------------
+nmap <F2> :TagbarToggle<CR>
+
 " ## NERDTree config
 " -----------------------------------------------------------------------
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeNodeDelimiter = "\u00a0"
-let g:NERDTreeIgnore = ['^node_modules$', '^dist$', '.DS_Store', '\.swp$', '^public$', '.nyc_output', '.git', '.cache', '.idea', '.vscode', '\.lock$', '__snapshots__', '^coverage$']
+let g:NERDTreeIgnore = ['^node_modules$', '^dist$', '.DS_Store', '\.swp$', '^public$', '.nyc_output', '.git', '.cache', '.idea', '.vscode', '\.lock$', '^coverage$']
 let NERDTreeShowHidden=1
 
 " Open NERDtree automatically if vim started without a file
