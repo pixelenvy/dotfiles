@@ -63,5 +63,12 @@
         added = green
         changed = red
         untracked = cyan
+
 [credential]
   helper = cache --timeout=3600
+
+[init]
+	templatedir = ~/.git_template
+
+[branch]
+  autosetuprebase = always
