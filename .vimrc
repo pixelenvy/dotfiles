@@ -33,6 +33,9 @@ Plug 'townk/vim-autoclose' " Auto close pairs ( {}, '', etc )
 Plug 'tpope/vim-fugitive' " Git Wrapper
 Plug 'skywind3000/asyncrun.vim' " Async Runner
 Plug 'majutsushi/tagbar' " Ctags in a handy sidebar
+Plug 'findango/vim-mdx' " Syntax highlighting for mdx
+Plug '/usr/local/opt/fzf' " fzf (!install fzf with homebrew first)
+Plug 'junegunn/fzf.vim' " Fzf wrapper
 
 " Theme
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -49,6 +52,7 @@ call plug#end()
 
 " ## General Settings
 " -----------------------------------------------------------------------
+let mapleader = ','
 set autoread
 set tabstop=2
 set expandtab
@@ -79,7 +83,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|coverage\|dist'
 
 " CTags
 " -----------------------------------------------------------------------
-nmap <F2> :TagbarToggle<CR>
+nmap <F3> :TagbarToggle<CR>
 
 " ## NERDTree config
 " -----------------------------------------------------------------------
@@ -96,6 +100,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " Toggle NERDTree with ctrl-n
 nmap <F1> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeFind<CR>
 
 " Ale Linting
 " -----------------------------------------------------------------------
@@ -105,13 +110,14 @@ let g:ale_lint_on_save = 1
 let g:airline#extensions#ale#enabled = 1
 let g:ale_linters = {
 \   'javascript': ['eslint'],
+\   'css': ['stylelint']
 \}
 let g:ale_fixers = {
 \   'javascript': ['prettier'],
 \   'css': ['prettier']
 \}
 let g:ale_pattern_options = {
-\   '\.module\.css$': { 'ale_linters': [], 'ale_fixers': ['prettier'] }
+\   '\.[sp]*css$': { 'ale_linters': ['stylelint'], 'ale_fixers': ['prettier'] }
 \}
 let g:ale_javascript_prettier_use_local_config = 1
 let g:ale_linters_explicit = 1
@@ -131,7 +137,7 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' : '<C-x><C-o><C-n><C-p><C-r>=pumvis
  
 " Emmet
 " -----------------------------------------------------------------------
-let g:user_emmet_leader_key='<Tab>'
+let g:user_emmet_leader_key=','
 let g:user_emmet_settings = {
 \  'javascript.jsx' : {
 \      'extends' : 'jsx',
