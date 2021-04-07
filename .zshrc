@@ -189,3 +189,7 @@ POWERLEVEL9K_VCS_COMMIT_ICON="\uf417"
 # Prompt Elements
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir dir_writable custom_package_json newline vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
+export GITLAB_AUTH_TOKEN=iM3yDAMzghkobtKpoz2x
+
+alias coop="cd ~/Projects/Co-op/home-delivery"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
